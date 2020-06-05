@@ -7,12 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {   
-    public function getDashboard()
-    {
-        return view('dashboard');
-    }
-
-    public function postSignUp(Request $request)
+       public function postSignUp(Request $request)
     {
         $this->validate($request, [/*requisitos para los inputs*/
             'email' => 'required|email|unique:users',/*para que sea unico, dentro de la tabla de nuestra bd (users)*/

@@ -16,10 +16,13 @@
     <section class="row posts">
         <div class="col-md-6 col-md-offset-3">
             <header><h3>Lo que ocultan los demás usuarios de Faceless</h3></header>
+            @foreach($posts as $post)
+
+            
             <article class="post">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam ullam iure assumenda, alias voluptates ea quas nemo a debitis, maxime laboriosam voluptatum numquam doloribus, autem deleniti doloremque sunt exercitationem consequatur!</p>
+            <p>{{ $post->body }}</p>
                 <div class="info">
-                    Publicado por: User el 13 de Feb de 2016
+                    Publicado por {{ $post->user->first_name }} el {{ $post->created_at }}
                 </div>
                 <div class="interaction">
                     <a href="#">Me encanta!</a> |
@@ -28,18 +31,8 @@
                     <a href="#">Eliminar</a>
                 </div>
             </article>
-            <article class="post">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam ullam iure assumenda, alias voluptates ea quas nemo a debitis, maxime laboriosam voluptatum numquam doloribus, autem deleniti doloremque sunt exercitationem consequatur!</p>
-                <div class="info">
-                    Publicado por: User el 13 de Feb de 2016
-                </div>
-                <div class="interaction">
-                    <a href="#">Me encanta!</a> |
-                    <a href="#">Vaya chorrada</a> |
-                    <a href="#">Editar</a> |
-                    <a href="#">Eliminar</a>
-                </div>
-            </article>
+
+            @endforeach
         </div>
     </section>
 @endsection

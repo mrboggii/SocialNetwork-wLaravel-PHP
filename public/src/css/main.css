@@ -15,19 +15,29 @@
 }
 
 .posts .post .info {
-    color: #a21b24;
+    color: #aaa;
     font-style: italic;
-    
-} 
+}
+
+.error,
+.success {
+    text-align: center;
+}
 
 .error {
     border: 1px solid red;
-    background-color: rgb(241, 180, 180);
+    background-color: #f9b5af;
     color: red;
+}
+
+.error ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .success {
     border: 1px solid green;
-    background-color: rgb(132, 209, 132);
+    background-color: #d1f9da;
     color: green;
 }
