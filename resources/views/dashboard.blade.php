@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+    @include('includes.message-block')
     <section class="row new-post">
         <div class="col-md-6 col-md-offset-3">
             <header><h3>Tienes algo que ocultar?</h3></header>

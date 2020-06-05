@@ -19,3 +19,15 @@
     font-style: italic;
     
 } 
+
+.error {
+    border: 1px solid red;
+    background-color: rgb(241, 180, 180);
+    color: red;
+}
+
+.success {
+    border: 1px solid green;
+    background-color: rgb(132, 209, 132);
+    color: green;
+}

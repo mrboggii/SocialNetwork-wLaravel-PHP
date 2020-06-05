@@ -9,9 +9,15 @@ class PostController extends Controller
     public function postCreatePost(Request $request)
     {
         // Validación
+        $this->validate($request,[
+            'body' => 'required|max:1000'
+        ]);
         $post = new Post();
         $post->body = $request['body'];
-        $request->user()->posts()->save($post);
-        return redirect()->route('dashboard');
+        $message = 'Ha habido un error';
+        if ($request->user()->posts()->save($post)){
+            $message = 'Publicado!';
+        };
+        return redirect()->route('dashboard')->with(['message' => $message]);
     }
 }
