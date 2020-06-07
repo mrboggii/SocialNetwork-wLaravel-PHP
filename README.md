@@ -17,6 +17,8 @@ Para arrancar el proyecto necesitaremos:
 y realizar php artisan update para ponernos al dia con el repositorio.
 php artisan serve para arrancar el servidor (todo esto tras haber creado la base de datos)
 
+<a href="https://imgur.com/MP7KVfl"><img src="https://i.imgur.com/MP7KVfl.gif" title="source: imgur.com" /></a>
+
 ⬇-Descargar el frontend (https://github.com/mrboggii/SocialFrontend.git)
 y realizar npm install para instalar todas las dependencias.
 ng serve para arrancar el frontend
@@ -71,4 +73,3 @@ ng serve para arrancar el frontend
 ## AUTOR
 
 * **Bogdan Prutean** - *Full Stack developer* - (bogdanprutean.online)
-
