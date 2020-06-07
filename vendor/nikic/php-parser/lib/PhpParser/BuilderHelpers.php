@@ -183,7 +183,7 @@ final class BuilderHelpers
         }
 
         $builtinTypes = [
-            'array', 'callable', 'string', 'int', 'float', 'bool', 'iterable', 'void', 'object', 'mixed'
+            'array', 'callable', 'string', 'int', 'float', 'bool', 'iterable', 'void', 'object'
         ];
 
         $lowerType = strtolower($type);
@@ -195,10 +195,6 @@ final class BuilderHelpers
 
         if ($nullable && (string) $type === 'void') {
             throw new \LogicException('void type cannot be nullable');
-        }
-
-        if ($nullable && (string) $type === 'mixed') {
-            throw new \LogicException('mixed type cannot be nullable');
         }
 
         return $nullable ? new NullableType($type) : $type;

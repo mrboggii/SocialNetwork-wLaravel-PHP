@@ -12,28 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware' => ['web']], function () {
-    
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
-Route::post( '/signup', [
-    'uses' => 'UserController@postSignUp',
-    'as' => 'signup'
-]);
-Route::post( '/signin', [
-    'uses' => 'UserController@postSignIn',
-    'as' => 'signin'
-]);
-Route::get('/dasboard', [
-    'uses' => 'PostController@getDashboard',
-    'as' => 'dashboard',
-    'middleware' => 'auth'
-]);
-Route::post('/createpost', [
-    'uses' => 'PostController@postCreatePost',
-    'as' => 'post.create'
-]);
-
 });

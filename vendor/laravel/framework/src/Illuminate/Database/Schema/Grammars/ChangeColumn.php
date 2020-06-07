@@ -28,7 +28,7 @@ class ChangeColumn
     {
         if (! $connection->isDoctrineAvailable()) {
             throw new RuntimeException(sprintf(
-                'Changing columns for table "%s" requires Doctrine DBAL. Please install the doctrine/dbal package.',
+                'Changing columns for table "%s" requires Doctrine DBAL; install "doctrine/dbal".',
                 $blueprint->getTable()
             ));
         }

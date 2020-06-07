@@ -1,46 +1,135 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
-{   
-       public function postSignUp(Request $request)
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $this->validate($request, [/*requisitos para los inputs*/
-            'email' => 'required|email|unique:users',/*para que sea unico, dentro de la tabla de nuestra bd (users)*/
-            'first_name' => 'required|max:120',
-            'password' => 'required|min:4'
-        ]);
-        $email = $request['email'];
-        $first_name = $request['first_name'];
-        $password = bcrypt($request['password']);
-
-        $user = new User();
-        $user->email = $email;
-        $user->first_name = $first_name;
-        $user->password = $password;
-
-        $user->save();
-
-        Auth::login($user);
-
-        return redirect()->route('dashboard');
-
+        {
+            return User::all();
+        }
     }
 
-    public function postSignIn(Request $request)
+    public function register(Request $request)
     {
-        $this->validate($request, [/*requisitos para los inputs*/
-            'email' => 'required|email',/*para que sea unico, dentro de la tabla de nuestra bd (users)*/
-            'password' => 'required|min:4'
-        ]);
-            
-       if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-           return redirect()->route('dashboard');
-       }
-       return redirect()->back();
+        
+        try {
+            $body = $request->validate([
+                'name' => ['required','max:30'],
+                'surname' => ['string'],
+                'nick' => ['string'],
+                'email' => ['required'],
+                'password' => ['required'],
+                /*'role' => ['string'],
+                'status' => ['string'],
+                'image' => ['string']*/
+            ]);
+            $body['password'] = Hash::make($body['password']);
+            $user = User::create($body);
+            return response($user, 201);
+        } catch (\Exception $e) {  
+            return response($e, 500);
+        }
     }
+
+    public function login(Request $request)
+    {
+        try {
+            $credentials = $request->validate([
+                'email' => 'required|string|email',
+                'password' => 'required|string',
+            ]);
+            if (!Auth::attempt($credentials)) {
+                return response(['message' => 'Datos Incorrectos'], 400);
+            }
+            $user = Auth::user(); 
+            //req.user, $request->user();
+            $token = $user->createToken('authToken')->accessToken;
+            return response([
+                'user' => $user,
+                'token' => $token
+            ]);
+        } catch (\Exception $e) {
+            return response($e, 500);
+        }
+    }
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }     
 }

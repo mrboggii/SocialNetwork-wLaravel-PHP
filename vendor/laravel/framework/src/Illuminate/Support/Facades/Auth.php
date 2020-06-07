@@ -3,7 +3,7 @@
 namespace Illuminate\Support\Facades;
 
 use Laravel\Ui\UiServiceProvider;
-use RuntimeException;
+use LogicException;
 
 /**
  * @method static \Illuminate\Auth\AuthManager extend(string $driver, \Closure $callback)
@@ -53,7 +53,7 @@ class Auth extends Facade
     public static function routes(array $options = [])
     {
         if (! array_key_exists(UiServiceProvider::class, static::$app->getLoadedProviders())) {
-            throw new RuntimeException('In order to use the Auth::routes() method, please install the laravel/ui package.');
+            throw new LogicException('Please install the laravel/ui package in order to use the Auth::routes() method.');
         }
 
         static::$app->make('router')->auth($options);

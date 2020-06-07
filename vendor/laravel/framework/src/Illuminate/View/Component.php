@@ -66,18 +66,11 @@ abstract class Component
             return $view;
         }
 
-        $resolver = function ($view) {
-            $factory = Container::getInstance()->make('view');
+        $factory = Container::getInstance()->make('view');
 
-            return $factory->exists($view)
-                        ? $view
-                        : $this->createBladeViewFromString($factory, $view);
-        };
-
-        return $view instanceof Closure ? function (array $data = []) use ($view, $resolver) {
-            return $resolver($view($data));
-        }
-        : $resolver($view);
+        return $factory->exists($view)
+                    ? $view
+                    : $this->createBladeViewFromString($factory, $view);
     }
 
     /**
