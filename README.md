@@ -64,6 +64,7 @@ ng serve para arrancar el frontend
 * PHP
 * Laravel
 * Angular
+* Passport
 * GitFlow
 
 ## AUTOR
