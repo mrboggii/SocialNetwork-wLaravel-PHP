@@ -64,6 +64,8 @@ ng serve para arrancar el frontend
 
 <a href="https://imgur.com/AxEXef9"><img src="https://i.imgur.com/AxEXef9.png" title="source: imgur.com" /></a>
 
+<a href="https://imgur.com/e2ozQQn"><img src="https://i.imgur.com/e2ozQQn.jpg" title="source: imgur.com" /></a>
+
 * MySQL - https://dev.mysql.com/downloads/installer/
 * MAMP - https://www.mamp.info/en/windows/
 * PHP - https://www.php.net/downloads
