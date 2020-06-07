@@ -63,12 +63,12 @@ ng serve para arrancar el frontend
 
 <a href="https://imgur.com/AxEXef9"><img src="https://i.imgur.com/AxEXef9.png" title="source: imgur.com" /></a>
 
-* PHP
-* Laravel
-* Passport
-* Angular
-* Sass
-* GitFlow
+* PHP - https://www.php.net/downloads
+* Laravel - https://laravel.com/docs/7.x/installation
+* Passport - https://laravel.com/docs/7.x/passport
+* Angular - https://angular.io/guide/setup-local
+* Sass - https://sass-lang.com/documentation
+* GitFlow - https://danielkummer.github.io/git-flow-cheatsheet/
 
 ## AUTOR
 
