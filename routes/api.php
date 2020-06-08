@@ -68,7 +68,28 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/post/{id}', 'LikeController@getLikeByPostId');
 });
 });
+Route::apiResource('users', 'UserController');
+Route::post('register','UserController@register');
+Route::post('login','UserController@login');
 
+Route::prefix('publication')->group(function () {
+    Route::get('getall','PublicationController@getPublication');
+    
+    Route::middleware(['auth:api'])->group(function () {
+        Route::post('newpublication','PublicationController@newPublication');
+        });
+});
+
+Route::prefix('likes')->group(function () {
+    Route::get('getAll', 'LikesController@getLikesAll');
+
+    Route::middleware(['auth:api'])->group(function () {
+
+        Route::post('add', 'LikesController@addLike');
+        Route::delete('subtrac/{id}', 'LikesController@subtractLike');
+        });
+
+});
 // MENSAJES
 Route::prefix('message')->group(function () {
 Route::middleware('auth:api')->group(function () {      

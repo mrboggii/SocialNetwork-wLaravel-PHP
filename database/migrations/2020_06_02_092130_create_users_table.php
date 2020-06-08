@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nick', 128)->nullable();
             $table->string('email', 128);
             $table->string('password');
-            $table->string('role', 128)->nullable();
+            $table->string('role', 128)->default('user');
             //$table->string('status', 128)->nullable();
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -37,6 +37,8 @@ class CreateUsersTable extends Migration
             $table->foreign('follower_id')->references('id')->on('users');
             $table->foreign('followed_id')->references('id')->on('users');
         });
+
+        
     }
 
     /**

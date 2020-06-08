@@ -14,10 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-    //    'name', 'email', 'password'
-      'id', 'name', 'surname', 'nick', 'email', 'role', 'password', 'status', 'image'
-    ];
+    protected $guarded = [];
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -32,7 +29,7 @@ class User extends Authenticatable
      * @var array
      */
 
-     /*
+     
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -45,6 +42,7 @@ class User extends Authenticatable
             'followed_id',
         );
     }
+
     public function following()
     {
         return $this->belongsToMany(
@@ -54,5 +52,14 @@ class User extends Authenticatable
             'follower_id',
         );
     }
-    */
+
+    public function publications()
+    {
+       return $this->hasMany('\App\Publication');
+    }
+    
+    public function likes()
+    {
+        return $this->belongsToMany('App\Publication', 'likes');
+    }
 }
