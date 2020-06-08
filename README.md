@@ -1,5 +1,4 @@
 
-
 #  👥 Red Social 💻💬 (develop)
 
 <a href="https://imgur.com/7hRjgGX"><img src="https://i.imgur.com/7hRjgGX.png" title="source: imgur.com" /></a>
@@ -36,21 +35,24 @@ ng serve para arrancar el frontend
 
 
 ## 📝 Registro 👤
+### *E-mail solo será admitido si tiene una estructura correcta.*
+### *Cada campo es requerido por lo que si se deja en blanco se accionará un aviso.*
+### *La contraseña deberá cumplir ciertas condiciones*
 <a href="https://imgur.com/wsqEmCT"><img src="https://i.imgur.com/wsqEmCT.gif" title="source: imgur.com" /></a>
 
 
 ## 🔑 Login 🔒
-
+### *El timeline y los perfiles solo seran visibles una vez se valide el login. Si no será imposible acceder.*
 <a href="https://imgur.com/bjLyEC8"><img src="https://i.imgur.com/bjLyEC8.png" title="source: imgur.com" /></a>
 
 <a href="https://imgur.com/isKFY2V"><img src="https://i.imgur.com/isKFY2V.png" title="source: imgur.com" /></a>
 
 ## 📣 Timeline 📣
-
+### *Se mostrarán los propios posts y de los demás usuarios en orden cronológico.*
 <a href="https://imgur.com/1PdmDTI"><img src="https://i.imgur.com/1PdmDTI.png" title="source: imgur.com" /></a>
 
 ## 👆 Navbar 👆
-
+### *Una vez loggeados, el primer indicador que tenemos es el cambio de los botones "Login" y "Registrar" a un menú desplegable con el nombre del usuario.*
 <a href="https://imgur.com/CAFMo4R"><img src="https://i.imgur.com/CAFMo4R.png" title="source: imgur.com" /></a>
 
 <a href="https://imgur.com/juUJX3H"><img src="https://i.imgur.com/juUJX3H.png" title="source: imgur.com" /></a>
@@ -64,7 +66,7 @@ ng serve para arrancar el frontend
 <a href="https://imgur.com/KTB62Zz"><img src="https://i.imgur.com/KTB62Zz.png" title="source: imgur.com" /></a>
 
 ## ⚙ Usuario 👤 
-
+### *Se podrá editar y cambiar al gusto la información de usuario.*
 <a href="https://imgur.com/lkgHDON"><img src="https://i.imgur.com/lkgHDON.png" title="source: imgur.com" /></a>
 
 ## 🔧 🔩 🔨 TECNOLOGIAS   
@@ -83,4 +85,5 @@ ng serve para arrancar el frontend
 * GitFlow - https://danielkummer.github.io/git-flow-cheatsheet/
 ## AUTOR
 
-* ©️Bogdan Prutean - *Full Stack developer* - (bogdanprutean.online)
+* ** ©️ Bogdan Prutean** - *Full Stack developer* - (bogdanprutean.online)
+
