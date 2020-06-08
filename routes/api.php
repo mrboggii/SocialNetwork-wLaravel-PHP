@@ -69,15 +69,15 @@ Route::middleware('auth:api')->group(function () {
 });
 });
 
-// COMMENTS
-Route::prefix('comments')->group(function () {
+// MENSAJES
+Route::prefix('message')->group(function () {
 Route::middleware('auth:api')->group(function () {      
-    Route::post('/{id}', 'CommentController@insertComment');// 1
-    Route::get('/', 'CommentController@getCommentsAll');    // 2
-    Route::get('/{id}', 'CommentController@getCommentById');// 3 
-    Route::put('/{id}', 'CommentController@UpdateComment'); // 4
-    Route::delete('/{id}','CommentController@disComment');  // 5
-    Route::get('/post/{id}','CommentController@getCommentByPostId');  
+    Route::post('/{id}', 'MessageController@insertMessage');// 1
+    Route::get('/', 'MessageController@getCMessageAll');    // 2
+    Route::get('/{id}', 'MessageController@getMessageById');// 3 
+    Route::put('/{id}', 'MessageController@UpdateMessage'); // 4
+    Route::delete('/{id}','MessageController@disMessage');  // 5
+    Route::get('/post/{id}','MessageController@getMessageByPostId');  
 });
 });
 
