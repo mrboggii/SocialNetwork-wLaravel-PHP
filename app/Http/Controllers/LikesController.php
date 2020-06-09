@@ -11,7 +11,8 @@ class LikesController extends Controller
 {
      
     public function getLikesAll(){ 
-        $likes = Like::with('user', 'post')->get();
+        
+        $likes = Like::with('user', 'post')->where('user_id', Auth::id())->get();
         return $likes;
     }
 
