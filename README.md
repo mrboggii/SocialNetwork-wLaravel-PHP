@@ -50,6 +50,9 @@ ng serve para arrancar el frontend
 ## 📣 Timeline 📣
 ### *Se mostrarán los propios posts y de los demás usuarios en orden cronológico.*
 <a href="https://imgur.com/1PdmDTI"><img src="https://i.imgur.com/1PdmDTI.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/4phJV2R"><img src="https://i.imgur.com/4phJV2R.png" title="source: imgur.com" /></a>
+### *Se podrán eliminar los posts propios*
+<a href="https://imgur.com/AA48pTi"><img src="https://i.imgur.com/AA48pTi.png" title="source: imgur.com" /></a>
 
 ## 👆 Navbar 👆
 ### *Una vez loggeados, el primer indicador que tenemos es el cambio de los botones "Login" y "Registrar" a un menú desplegable con el nombre del usuario.*
@@ -64,6 +67,7 @@ ng serve para arrancar el frontend
 ## 🧑‍🤝‍🧑 Gente
 
 <a href="https://imgur.com/KTB62Zz"><img src="https://i.imgur.com/KTB62Zz.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/QT5SbaR"><img src="https://i.imgur.com/QT5SbaR.png" title="source: imgur.com" /></a>
 
 ## ⚙ Usuario 👤 
 ### *Se podrá editar y cambiar al gusto la información de usuario.*
