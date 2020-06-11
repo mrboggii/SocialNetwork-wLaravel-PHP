@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
-{
-    protected $guarded = [];
+{ 
+    protected $table ='likes';
+    protected $fillable = ['id','id_post','id_user'];
 }

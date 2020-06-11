@@ -65,7 +65,38 @@ class UserController extends Controller
             return response($e, 500);
         }
     }
-
+    public function logout()
+    {
+        try {
+            // Auth::user()->token()->delete();
+            Auth::user()->token()->revoke();
+            return response([
+                'message' => 'User successfully disconected.'
+            ]);
+        } catch (\Exception $e) {
+            return response([
+                'message' => 'There was an error trying to login the user',
+                'error' => $e
+            ], 500);
+        }
+    }
+    public function follow(Request $request)
+    {
+        $user = Auth::user();
+        $follow = DB::table('followers')->insert(['id_followed' => $request[0], 'id_follower' => $user->id]);
+        return response(['msg'=>'Sois amigos','follow'=>$follow],200);
+    }
+    public function unfollow(Request $request)
+    {
+        try {
+            $user = Auth::user();
+            $unfollow = DB::table('followers')->where('id_follower', '=', $user->id)
+                ->where('id_followed', '=', $request[0])->delete();
+            return response(['msg' => 'Ya no sois amigos', 'unfollow' => $unfollow], 200);
+        }catch (\Exception $e){
+            return response(['msg'=>'Ha ocurrido un error', 500]);
+        }
+    }
 
     /**
      * Show the form for creating a new resource.
